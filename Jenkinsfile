@@ -7,7 +7,7 @@ node{
    
     stage("Docker build"){
         sh 'docker version'
-        sh 'cd claims-api && docker build -t ineeladri/app-2-img:latest -f Dockerfile .'
+        sh 'cd claims-api && docker build -t jsilaparasetti/app-2-img:latest -f Dockerfile .'
         sh 'docker image ls'
     }
 
