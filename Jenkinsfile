@@ -2,7 +2,7 @@ node{
    
     stage("Git Clone"){
 
-        git branch: 'main', url: 'https://github.com/jsilaparasetti/jenkinsfile-1.git'
+        git branch: 'master', url: 'https://github.com/jsilaparasetti/jenkinsfile-1.git'
     }
    
     stage("Docker build"){
