@@ -18,6 +18,10 @@ node{
     stage("Pushing Image to Docker Hub"){
      
        sh 'docker push ineeladri/app-2-img:latest'
-    
-    } 
+       }
+    post {
+always {
+sh 'docker logout'
+}
+}
 }
