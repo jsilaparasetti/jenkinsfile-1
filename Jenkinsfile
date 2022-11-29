@@ -7,7 +7,7 @@ node{
    
     stage("Docker build"){
         sh 'docker version'
-        sh 'docker build -t jsilaparasetti/app-2-img:latest -f Dockerfile .'
+        sh 'docker build -t jsilaparasetti/app-2-img:latest .'
         sh 'docker image ls'
     }
 
