@@ -2,7 +2,7 @@ node{
     
     stage("Git Clone"){
 
-        git branch: 'main', url: 'https://github.com/jsilaparasetti/jenkinsfile-1.git'
+        git branch: 'main', url: 'https://github.com/harishdasari1348/springboot-microservices'
     }
    
     stage("Docker build"){
@@ -20,3 +20,4 @@ node{
        sh 'docker push ineeladri/app-2-img:latest'
     
     } 
+}
