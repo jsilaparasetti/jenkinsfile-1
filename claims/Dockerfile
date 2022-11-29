@@ -13,5 +13,5 @@ RUN rm -rf /usr/local/tomcat/conf/server.xml
 #copy access-infinity to docker image from builder image
 RUN cp -R /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps/
 COPY --from=maven_build /tmp/target/claims-api-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
-EXPOSE 8080
+EXPOSE 9000
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
