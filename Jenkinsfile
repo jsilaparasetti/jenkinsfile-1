@@ -1,13 +1,11 @@
 node{
-   
-    stage("Git Clone"){
+   stage("Git Clone"){
 
         git branch: 'master', url: 'https://github.com/jsilaparasetti/jenkinsfile-1.git'
     }
    
     stage("Docker build"){
-        sh 'docker version'
-        sh 'docker build -t jsilaparasetti/app-2-img:latest .'
+    sh 'docker build -t jsilaparasetti/app-2-img:latest .'
         sh 'docker image ls'
     }
 
@@ -20,8 +18,12 @@ node{
        sh 'docker push ineeladri/app-2-img:latest'
        }
     post {
-always {
-sh 'docker logout'
-}
-}
+        always {
+            script {
+                if (getContext(hudson.FilePath)) {
+                    deleteDir()
+                }
+            }
+        }
+    }
 }
